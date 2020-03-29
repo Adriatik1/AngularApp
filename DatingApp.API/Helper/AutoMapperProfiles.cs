@@ -26,6 +26,9 @@ namespace DatingApp.API.Helper
 
             CreateMap<UserForUpdateDto, User>()
             .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
+
+            CreateMap<Photo, PhotoForReturnDto>();
+            CreateMap<PhotoForCreationDto, Photo>();
         }   
     }
 }
