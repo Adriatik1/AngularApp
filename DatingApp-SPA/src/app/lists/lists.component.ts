@@ -17,11 +17,11 @@ export class ListsComponent implements OnInit {
   likesParam: string;
 
   constructor(private authService: AuthService, private alertify: AlertifyService,
-    private route: ActivatedRoute, private userService: UserService) { }
+              private route: ActivatedRoute, private userService: UserService) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
-      this.users = data['users'];
+      this.users = data['users'].result;
       this.pagination = data['users'].pagination;
     });
     this.likesParam = 'Likers';
